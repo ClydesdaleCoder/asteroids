@@ -7,17 +7,18 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
-    Player(x,y,radius)
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
+    ship = Player(x,y)
+      
     while True: 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        pygame.Surface.fill(screen,"black")
-        Play
+        screen.fill("black")
+        ship.draw(screen)
+        ship.update(dt)
         pygame.display.flip()
-        Player.draw(screen) 
         dt =  clock.tick(60)/1000
 
     print ("Starting Asteroids!")
