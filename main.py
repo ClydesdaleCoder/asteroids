@@ -1,3 +1,4 @@
+import sys
 import pygame
 from constants import*
 from player import *
@@ -39,7 +40,7 @@ def main():
                 sys.exit()
             for s in shots:
                 if s.collision(a) == True: 
-                    a.kill(),s.kill()
+                    a.split(),s.kill()
 
         pygame.display.flip()
         dt =  clock.tick(60)/1000
